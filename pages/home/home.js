@@ -65,8 +65,7 @@ Page({
       method: 'GET',
       success: (res) => {
         const data = res.data;
-        console.log("获取后台数据成功：");
-        console.log(data);
+        console.log("获取后台数据成功!");
         this.setData({
           date: curDate,
           content: data.content,
@@ -91,4 +90,11 @@ Page({
       path: '/pages/home/home',
     };
   },
+  onShareTimeline() {
+    console.log('onShareTimeline');
+    return {
+      title: '诗画共赏',
+      imageUrl: 'https://skytools.cn/images/poetry/daily_poetry_logo.jpeg'
+    };
+  }
 });
