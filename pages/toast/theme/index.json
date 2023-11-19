@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "t-toast": "tdesign-miniprogram/toast/toast",
-    "t-button": "tdesign-miniprogram/button/button"
-  }
-}

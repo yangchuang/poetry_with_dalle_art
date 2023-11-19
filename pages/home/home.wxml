@@ -1,19 +1,18 @@
 <view class="main">
-  <t-cell title="2023-11-20" leftIcon="calendar" bordered="{{false}}" style="background: none;padding: 0%;" />
+  <t-cell title="{{ date }}" leftIcon="calendar" bordered="{{false}}" style="background: none;padding: 0%;" />
 
   <t-divider dash content="今天的一句诗词" align="left" />
  
-  <view class="content">山重水复疑无路，柳暗花明又一村。</view>
+  <view class="content">{{ content }}</view>
 
-  <t-image src="https://skytools.cn/images/poetry/3.jpeg" mode="widthFix" shape="round" show-menu-by-longpress="true" style="width: 100%;"/>
+  <t-image src="{{ img_list[0] }}" mode="widthFix" shape="round" show-menu-by-longpress="true" style="width: 100%;"/>
 
   <t-divider dash content="诗词全文" align="left" />
-  <view>
-    <view>《后出塞五首》</view>
-    <view>唐代-杜甫</view>
-    <view>男儿生世间，及壮当封侯。</view>
-    <view>战伐有功业，焉能守旧丘？</view>
-    <view>召募赴蓟门，军动不可留。</view>
-    <view>千金买马鞍，百金装刀头。</view>
+  <view class="origin_content">
+    <view>《{{ title }}》</view>
+    <view class="author">{{ dynasty }}-{{ author }}</view>
+    <block wx:for="{{origin_content}}" wx:key="index">
+      <view>{{item}}</view>
+    </block>
   </view>
 </view>

@@ -1,10 +1,5 @@
-import gulpError from './utils/gulpError';
 App({
     onShow() {
-        if (gulpError !== 'gulpErrorPlaceHolder') {
-            wx.redirectTo({
-                url: `/pages/gulp-error/index?gulpError=${gulpError}`,
-            });
-        }
+        console.log("欢迎使用诗画共赏小程序");
     },
 });

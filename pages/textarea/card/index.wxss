@@ -1,9 +1,0 @@
-.textarea-example {
-  margin: 0 32rpx;
-  background-color: #fff;
-  border-radius: 18rpx;
-}
-
-.external-class {
-  height: 312rpx;
-}

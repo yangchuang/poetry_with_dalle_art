@@ -1,6 +1,0 @@
-page {
-  background-color: #fff;
-}
-page .demo-section__wrapper {
-  padding: 0 32rpx;
-}

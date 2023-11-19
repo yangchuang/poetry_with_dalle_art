@@ -1,3 +1,0 @@
-<t-progress percentage="80" />
-<t-progress theme="plump" percentage="80" />
-<t-progress theme="circle" percentage="30" />

@@ -3,8 +3,6 @@
     "pages/home/home"
   ],
   "usingComponents": {
-    "t-demo": "./components/demo-block/index",
-    "t-button": "tdesign-miniprogram/button/button",
     "t-icon": "tdesign-miniprogram/icon/icon",
     "t-divider": "tdesign-miniprogram/divider/divider"
   },
@@ -15,5 +13,6 @@
     "navigationBarTitleText": "TDesign",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
 }
