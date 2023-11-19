@@ -7,7 +7,7 @@ page {
   padding-left: 32rpx;
   padding-right: 32rpx;
   padding-top: 32rpx;
-  padding-bottom: 240rpx;
+  padding-bottom: 50rpx;
 }
 .content{
   padding: 16rpx;
