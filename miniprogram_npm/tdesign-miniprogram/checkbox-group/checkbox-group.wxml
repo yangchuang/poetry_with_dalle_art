@@ -1,0 +1,17 @@
+<wxs src="../common/utils.wxs" module="_" />
+
+<view class="{{ classPrefix }} class {{prefix}}-class" style="{{_._style([style, customStyle])}}">
+  <slot />
+  <block wx:for="{{checkboxOptions}}" wx:key="value">
+    <t-checkbox
+      class="{{prefix}}-checkbox-option"
+      label="{{item.label || item.text || ''}}"
+      value="{{item.value || ''}}"
+      content="{{item.content || ''}}"
+      check-all="{{item.checkAll}}"
+      disabled="{{item.disabled}}"
+      data-item="{{item}}"
+      bind:change="handleInnerChildChange"
+    ></t-checkbox>
+  </block>
+</view>

@@ -1,0 +1,15 @@
+page {
+  background-color: #f6f6f6;
+}
+.main {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 32rpx;
+  padding-right: 32rpx;
+  padding-top: 32rpx;
+  padding-bottom: 240rpx;
+}
+.content{
+  padding: 16rpx;
+  background-color: beige;
+}

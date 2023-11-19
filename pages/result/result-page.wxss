@@ -1,0 +1,6 @@
+page {
+  background-color: #fff;
+}
+page .demo-section__wrapper {
+  padding: 48rpx 32rpx;
+}

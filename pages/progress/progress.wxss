@@ -1,0 +1,6 @@
+page {
+  background-color: #fff;
+}
+.t-progress {
+  margin-top: 32rpx;
+}

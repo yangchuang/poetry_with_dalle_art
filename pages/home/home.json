@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "pull-down-list": "../../components/pull-down-list/index",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-image": "tdesign-miniprogram/image/image"
+  },
+  "navigationBarTitleText": "诗画共赏",
+  "navigationBarBackgroundColor": "#f6f6f6",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#f6f6f6"
+}

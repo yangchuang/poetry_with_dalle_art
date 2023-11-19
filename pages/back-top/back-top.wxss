@@ -1,0 +1,12 @@
+page {
+  background: #fff;
+}
+page .skeleton-item {
+  padding-bottom: 48rpx;
+}
+page .container-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 48rpx;
+  flex-wrap: wrap;
+}
