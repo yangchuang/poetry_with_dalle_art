@@ -11,12 +11,14 @@ page {
 }
 .content{
   padding: 16rpx;
+  font-size: smaller;
 }
 .origin_content{
+  font-size: smaller;
   padding: 16rpx;
   text-align: center;
 }
 
 .author{
-  font-size: smaller;
+  font-size: x-small;
 }
