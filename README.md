@@ -25,6 +25,7 @@ npm i tdesign-miniprogram -S --production
 ## 感谢 
 
 - [今日诗词](https://www.jinrishici.com/) 提供的API获取每天的推荐诗词
+- [https://devv.ai/](https://devv.ai/) 很好用的一个AI搜索引擎，帮我这个后台开发解决了很多前端微信小程序开发的问题
 
 ## 灵感来源
 
