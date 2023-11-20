@@ -1,7 +1,5 @@
 const util = require('../../utils/util.js')
 
-// 在页面的js文件中
-// 在页面的js文件中
 Page({
   data: {
     date: "",
