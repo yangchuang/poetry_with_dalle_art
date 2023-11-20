@@ -30,3 +30,6 @@ npm i tdesign-miniprogram -S --production
 ## 灵感来源
 
 - [yihong0618/2023](https://github.com/yihong0618/2023)
+
+## 小程序的logo也是用DALL-E3画的😊
+![logo](./assets/daily_poetry_logo.jpeg)
