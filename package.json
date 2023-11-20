@@ -1,0 +1,14 @@
+{
+  "name": "sky_app_with_tdesign",
+  "version": "1.0.1",
+  "description": "诗画共赏是一个展示唐诗宋词和DALL-E3 AI配图的小程序。每天，你可以在这里欣赏到一首精选的唐诗宋词，以及根据诗句生成的DALL-E3 AI配图。 #### 运行截图 <img src=\"./assets/screen_shot.jpeg\" alt=\"诗画共赏\" width=300px/>",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tdesign-miniprogram": "^1.2.4"
+  }
+}

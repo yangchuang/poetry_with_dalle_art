@@ -1,5 +1,5 @@
 ### “诗画共赏”小程序前端代码。
-诗画共赏是一个展示唐诗宋词和DALL-E3 AI配图的小程序。每天，你可以在这里欣赏到一首精选的唐诗宋词，以及根据诗句生成的DALL-E3 AI配图。
+“诗画共赏”是一个展示唐诗宋词和DALL-E3 AI配图的小程序。每天，你可以在这里欣赏到一首精选的唐诗宋词，以及根据诗句生成的DALL-E3 AI配图。
 #### 运行截图
 <img src="./assets/screen_shot.jpeg" alt="诗画共赏" width=300px/>
 
@@ -8,6 +8,12 @@
 
 最开始用Taro+VUE3+[NutUI](https://nutui.jd.com/taro/vue/4x/#/zh-CN/guide/intro)开发，感觉有点卡。后来用原生的微信小程序+[TDesign](https://tdesign.tencent.com/miniprogram/overview)重构了现在这个版本。
 
-后端代码地址: [vertx starter](https://github.com/yangchuang/vertx-starter)
+TDesign需要执行下面的npm命令安装, 安装之后通过微信开发工具的 “工具➡️构建npm” 生成`miniprogram_npm`
+```
+npm init
+npm i tdesign-miniprogram -S --production
+```
+
+#### 后端代码地址: [vertx starter](https://github.com/yangchuang/vertx-starter)
 
 #### 感谢 [今日诗词](https://www.jinrishici.com/) 提供的API获取每天的推荐诗词
