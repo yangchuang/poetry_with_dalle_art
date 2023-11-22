@@ -2,14 +2,24 @@ const util = require('../../utils/util.js')
 
 Page({
   data: {
-    fabButton:{
+    preDayBtnProps:{
+      icon: 'chevron-left-circle',
+      size: 'small',
+      theme:'light',
+      disabled: false
+    },
+    nextDayBtnProps:{
+      icon: 'chevron-right-circle',
+      size: 'small',
+      theme:'light',
+      disabled: true
+    },
+    shareBtnProps:{
       icon: 'share',
       openType: 'share',
       size: 'small',
       theme:'light'
     },
-    preDayBtn: false,
-    nextDayBtn: true,
     date: "",
     content: "",
     title: "",
@@ -88,36 +98,48 @@ Page({
     });
   },
   preDay: function () {
-    this.setData({
-      nextDayBtn: false
-    });
+    this.toggleNextDayDtn(false);
     const currentDate = new Date(this.data.date);
     currentDate.setDate(currentDate.getDate() - 1);
     const preDate = util.formatDate(currentDate);
     console.log("上一天"+preDate);
     //11-18前还没有数据
     if(preDate === '2023-11-18') { 
-      this.setData({
-        preDayBtn: true
-      });
+      this.togglePreDayDtn(true);
     }
     this.fetchData(preDate);
   },
   
   nextDay: function () {
-    this.setData({
-      preDayBtn:false
-    });
+    this.togglePreDayDtn(false);
     const currentDate = new Date(this.data.date);
     currentDate.setDate(currentDate.getDate() + 1);
     const nextDate = util.formatDate(currentDate);
     if (nextDate === util.formatDate(new Date())) {
-      this.setData({
-        nextDayBtn: true
-      });
+      this.toggleNextDayDtn(true);
     }
     console.log("下一天"+nextDate);
     this.fetchData(nextDate);
+  },
+  togglePreDayDtn: function(flag) {
+    this.setData({
+      preDayBtnProps:{
+        icon: 'chevron-left-circle',
+        size: 'small',
+        theme:'light',
+        disabled: flag
+      }
+    })
+  },
+  toggleNextDayDtn: function(flag) {
+    this.setData({
+      nextDayBtnProps:{
+        icon: 'chevron-right-circle',
+        size: 'small',
+        theme:'light',
+        disabled: flag
+      }
+    })
   },
   onShareAppMessage() {
     return {

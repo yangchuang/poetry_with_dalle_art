@@ -3,7 +3,8 @@
     "t-icon": "tdesign-miniprogram/icon/icon",
     "t-divider": "tdesign-miniprogram/divider/divider",
     "t-image": "tdesign-miniprogram/image/image",
-    "t-button": "tdesign-miniprogram/button/button"
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-cell": "tdesign-miniprogram/cell/cell"
   },
   "navigationBarTitleText": "诗画共赏",
   "navigationBarBackgroundColor": "#f6f6f6",

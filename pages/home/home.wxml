@@ -1,9 +1,5 @@
 <view class="main">
-  <view>
-    <t-button shape="circle" icon="chevron-left-circle" size="small" theme="light" variant="text" disabled="{{preDayBtn}}" bind:tap="preDay"></t-button>
-    <t-button style="padding-left: 0px;padding-right: 0px;" variant="text" hover-class="none" size="small" >{{ date }}</t-button>
-    <t-button shape="circle" icon="chevron-right-circle" size="small" theme="light" variant="text" disabled="{{nextDayBtn}}" bind:tap="nextDay"></t-button>
-  </view>
+  <t-cell title="{{ date }}" leftIcon="calendar" bordered="{{false}}" style="background: none;padding: 0%;" />
 
   <t-divider dash content="今天的一句诗词" align="left" />
  
@@ -20,6 +16,8 @@
     </block>
   </view>
   <view>
-    <t-fab aria-label="分享" button-props="{{fabButton}}"></t-fab>
+    <t-fab style="bottom: 80px;" aria-label="分享" button-props="{{shareBtnProps}}"></t-fab>
+    <t-fab bind:click="preDay" style="left: 16px;" aria-label="前一天" button-props="{{preDayBtnProps}}"></t-fab>
+    <t-fab bind:click="nextDay" aria-label="后一天" button-props="{{nextDayBtnProps}}"></t-fab>
   </view>
 </view>
