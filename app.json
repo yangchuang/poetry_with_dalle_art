@@ -3,8 +3,7 @@
     "pages/home/home"
   ],
   "usingComponents": {
-    "t-icon": "tdesign-miniprogram/icon/icon",
-    "t-divider": "tdesign-miniprogram/divider/divider"
+    "t-fab": "tdesign-miniprogram/fab/fab"
   },
   "window": {
     "backgroundTextStyle": "light",
