@@ -10,15 +10,15 @@ page {
   padding-bottom: 50rpx;
 }
 .content{
+  font-size: small;
   padding: 16rpx;
-  font-size: smaller;
 }
 .origin_content{
-  font-size: smaller;
+  font-size: small;
   padding: 16rpx;
   text-align: center;
 }
 
 .author{
-  font-size: x-small;
+  font-size: smaller;
 }

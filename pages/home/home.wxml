@@ -16,6 +16,7 @@
     </block>
   </view>
   <view>
+    <t-fab wx:if="{{has_audio}}" bind:click="beginAudio" style="bottom: 128px;" aria-label="音频" button-props="{{ttsBtnProps}}"></t-fab>
     <t-fab style="bottom: 80px;" aria-label="分享" button-props="{{shareBtnProps}}"></t-fab>
     <t-fab bind:click="preDay" style="left: 16px;" aria-label="前一天" button-props="{{preDayBtnProps}}"></t-fab>
     <t-fab bind:click="nextDay" aria-label="后一天" button-props="{{nextDayBtnProps}}"></t-fab>

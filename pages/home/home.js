@@ -1,15 +1,31 @@
 const util = require('../../utils/util.js')
 
+const audio = wx.createInnerAudioContext({
+  useWebAudioImplement: false
+});
+
+wx.setInnerAudioOption({
+  obeyMuteSwitch:false,
+  success: function(e) {
+    console.log(e)
+    console.log("开启静音播放成功")
+  },
+  fail: function(e) {
+    console.error(e)
+    console.error("开启静音播放失败")
+  }
+})
+
 Page({
   data: {
     preDayBtnProps:{
-      icon: 'chevron-left-circle',
+      icon: 'arrow-left',
       size: 'small',
       theme:'light',
       disabled: false
     },
     nextDayBtnProps:{
-      icon: 'chevron-right-circle',
+      icon: 'arrow-right',
       size: 'small',
       theme:'light',
       disabled: true
@@ -20,16 +36,18 @@ Page({
       size: 'small',
       theme:'light'
     },
-    date: "",
-    content: "",
-    title: "",
-    dynasty: "",
-    author: "",
-    origin_content: [],
-    img_list: [],
+    ttsBtnProps:{
+      icon: 'play-circle',
+      size: 'small',
+      theme:'light'
+    },
+    has_audio:false
   },
+  
   onLoad: function () {
     this.checkSession();
+    //音频自然结束后，更改图标
+    this.bingAudioOnEnded();
   },
   checkSession: function () {
     wx.checkSession({
@@ -88,8 +106,12 @@ Page({
           dynasty: data.dynasty,
           author: data.author,
           origin_content: data.origin_content,
-          img_list: data.img_list
+          img_list: data.img_list,
+          has_audio: data.has_audio ? true:false
         });
+        if(data.has_audio) {
+          audio.src = "https://skytools.cn/audios/poetry/"+ date +"/1.mp3";
+        }
       },
       fail: (err) => {
         console.error(err.data);
@@ -107,6 +129,10 @@ Page({
     if(preDate === '2023-11-18') { 
       this.togglePreDayDtn(true);
     }
+    if(!audio.paused) {
+      this.stopAudio();
+    }
+    
     this.fetchData(preDate);
   },
   
@@ -119,12 +145,15 @@ Page({
       this.toggleNextDayDtn(true);
     }
     console.log("下一天"+nextDate);
+    if(!audio.paused) {
+      this.stopAudio();
+    }
     this.fetchData(nextDate);
   },
   togglePreDayDtn: function(flag) {
     this.setData({
       preDayBtnProps:{
-        icon: 'chevron-left-circle',
+        icon: 'arrow-left',
         size: 'small',
         theme:'light',
         disabled: flag
@@ -134,12 +163,41 @@ Page({
   toggleNextDayDtn: function(flag) {
     this.setData({
       nextDayBtnProps:{
-        icon: 'chevron-right-circle',
+        icon: 'arrow-right',
         size: 'small',
         theme:'light',
         disabled: flag
       }
     })
+  },
+  beginAudio:function() {
+    if (!audio.paused) {
+      this.stopAudio()
+    } else {
+      this.playAudio()
+    }
+  },
+
+  stopAudio: function () {
+    audio.stop();
+    this.setData({
+      'ttsBtnProps.icon': 'play-circle'
+    });
+  },
+  playAudio: function () {
+    // 播放音频
+    audio.play()
+    this.setData({
+      'ttsBtnProps.icon': 'stop-circle'
+    });
+  },
+  bingAudioOnEnded: function() {
+    const page = this;
+    audio.onEnded(() => {
+      page.setData({
+        'ttsBtnProps.icon': 'play-circle'
+      });
+    });
   },
   onShareAppMessage() {
     return {
