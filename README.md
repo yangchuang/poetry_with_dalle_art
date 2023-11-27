@@ -23,10 +23,10 @@ npm i tdesign-miniprogram -S --production
 [vertx starter](https://github.com/yangchuang/vertx-starter)
 
 ## 感谢 
-
-- [今日诗词](https://www.jinrishici.com/) 提供的API获取每天的推荐诗词
+- 使用[古诗词API](https://github.com/xenv/gushici)，自己部署了一套服务，数据集来源于 [花间集](https://github.com/chinese-poetry/huajianji)的诗词部分
 - [https://devv.ai/](https://devv.ai/) 很好用的一个AI搜索引擎，帮我这个后台开发解决了很多前端微信小程序开发的问题
-- [edge-tts](https://github.com/rany2/edge-tts) 将诗词转语音
+- [edge-tts](https://github.com/rany2/edge-tts) 将诗词转语音 
+- 使用[ChatGPT-Next-Web](https://github.com/Yidadaa/ChatGPT-Next-Web) 部署到vercel作为代理使国内的服务器可以访问OpenAI的DALL-E API
 
 ## 灵感来源
 
