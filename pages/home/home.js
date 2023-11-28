@@ -45,16 +45,18 @@ Page({
   },
   
   onLoad: function () {
+    //无论登录与否，都加载数据
+    this.fetchData(util.formatDate(new Date()));
+    //登录
     this.checkSession();
     //音频自然结束后，更改图标
     this.bingAudioOnEnded();
   },
   checkSession: function () {
     wx.checkSession({
-      success: () => {
+      success: (res) => {
         console.log("session未过期，直接获取数据")
-        // session未过期，直接获取数据
-        this.fetchData(util.formatDate(new Date()));
+        console.log(res)
       },
       fail: () => {
         console.warn("session已过期，重新登录")
@@ -63,6 +65,7 @@ Page({
     });
   },
   login: function () {
+    console.log("准备login");
     wx.login({
       success: (res) => {
         if (res.code) {
@@ -70,11 +73,10 @@ Page({
           this.requestLogin(res.code);
         } else {
           console.warn('调用wx.login()接口，登录失败！' + res.errMsg);
-          //失败也运行正常显示数据
-          this.fetchData(util.formatDate(new Date()));
         }
       },
       fail: (err) => {
+        console.log("wx.login fail")
         console.error(err);
       }
     });
@@ -87,8 +89,6 @@ Page({
       },
       success: (res) => {
         console.log("小程序登录成功:" + res.data.token);
-        // 获取数据
-        this.fetchData(util.formatDate(new Date()));
       }
     });
   },
