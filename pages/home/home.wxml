@@ -3,16 +3,16 @@
 
   <t-divider dash content="今天的一句诗词" align="left" />
  
-  <view class="content">{{ content }}</view>
+  <view class="content"><text user-select="true">{{ content }}</text></view>
 
   <t-image src="{{ img_list[0] }}" mode="widthFix" shape="round" show-menu-by-longpress="true" style="width: 100%;"/>
 
   <t-divider dash content="诗词全文" align="left" />
   <view class="origin_content">
-    <view>《{{ title }}》</view>
-    <view class="author">{{ dynasty }}-{{ author }}</view>
+    <view><text user-select="true">《{{ title }}》</text></view>
+    <view class="author"><text user-select="true">{{ dynasty }}-{{ author }}</text></view>
     <block wx:for="{{origin_content}}" wx:key="index">
-      <view>{{item}}</view>
+      <view><text user-select="true">{{item}}</text></view>
     </block>
   </view>
   <view>
