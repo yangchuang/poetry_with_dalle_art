@@ -4,7 +4,8 @@
     "t-divider": "tdesign-miniprogram/divider/divider",
     "t-image": "tdesign-miniprogram/image/image",
     "t-button": "tdesign-miniprogram/button/button",
-    "t-cell": "tdesign-miniprogram/cell/cell"
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-calendar": "tdesign-miniprogram/calendar/calendar"
   },
   "navigationBarTitleText": "诗画共赏",
   "navigationBarBackgroundColor": "#f6f6f6",

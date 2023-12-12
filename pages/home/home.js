@@ -18,6 +18,10 @@ wx.setInnerAudioOption({
 
 Page({
   data: {
+    calendarVisible: false,
+    minDate: new Date(2023, 10, 18).getTime(),
+    maxDate: new Date().getTime(),
+    calendarDate: new Date().getTime(),
     preDayBtnProps:{
       icon: 'arrow-left',
       size: 'small',
@@ -107,7 +111,8 @@ Page({
           author: data.author,
           origin_content: data.origin_content,
           img_list: data.img_list,
-          has_audio: data.has_audio ? true:false
+          has_audio: data.has_audio ? true:false,
+          calendarDate: util.convertToTimestamp(date)
         });
         if(data.has_audio) {
           audio.src = "https://skytools.cn/audios/poetry/"+ date +"/1.mp3";
@@ -211,5 +216,12 @@ Page({
       title: '诗画共赏',
       imageUrl: 'https://skytools.cn/images/poetry/daily_poetry_logo.jpeg'
     };
+  },
+  handleCalendar() {
+    this.setData({ calendarVisible: true });
+  },
+  handleConfirm(e) {
+    const { value } = e.detail;
+    this.fetchData(util.formatTime(value));
   },
 });

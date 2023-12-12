@@ -1,5 +1,6 @@
 <view class="main">
-  <t-cell title="{{ date }}" leftIcon="calendar" bordered="{{false}}" style="background: none;padding: 0%;" />
+  <t-calendar visible="{{calendarVisible}}" minDate="{{minDate}}" maxDate="{{maxDate}}" value="{{calendarDate}}" bind:confirm="handleConfirm" />
+  <t-cell title="{{ date }}" leftIcon="calendar" bordered="{{false}}" style="background: none;padding: 0%;" bind:tap="handleCalendar" />
 
   <t-divider dash content="今天的一句诗词" align="left" />
  
