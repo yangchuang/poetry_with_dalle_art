@@ -221,7 +221,24 @@ Page({
     this.setData({ calendarVisible: true });
   },
   handleConfirm(e) {
+    if(!audio.paused) {
+      this.stopAudio();
+    }
+
     const { value } = e.detail;
-    this.fetchData(util.formatTime(value));
+    const selectedDate = util.formatTime(value);
+    this.fetchData(selectedDate);
+
+    if (selectedDate === util.formatDate(new Date())) {
+      this.toggleNextDayDtn(true);
+    } else {
+      this.toggleNextDayDtn(false);
+    }
+    //11-18前还没有数据
+    if(selectedDate === '2023-11-18') { 
+      this.togglePreDayDtn(true);
+    } else {
+      this.togglePreDayDtn(false);
+    }
   },
 });
