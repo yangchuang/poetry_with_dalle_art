@@ -6,8 +6,15 @@
  
   <view class="content"><text user-select="true">{{ content }}</text></view>
 
-  <t-image src="{{ img_list[0] }}" mode="widthFix" shape="round" show-menu-by-longpress="true" style="width: 100%;"/>
-
+  <t-swiper 
+    current="0"
+    height="384px"
+    paginationPosition="bottom-right"
+    navigation="{{ { type: 'fraction' } }}" 
+    image-props="{{ { shape: 'round', mode:'widthFix', style:'width:100%;height:100%'} }}" 
+    list="{{img_list}}">
+  </t-swiper>
+  
   <t-divider dash content="诗词全文" align="left" />
   <view class="origin_content">
     <view><text user-select="true">《{{ title }}》</text></view>

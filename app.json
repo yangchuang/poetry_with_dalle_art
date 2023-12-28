@@ -3,6 +3,8 @@
     "pages/home/home"
   ],
   "usingComponents": {
+    "t-swiper": "tdesign-miniprogram/swiper/swiper",
+    "t-swiper-nav": "tdesign-miniprogram/swiper-nav/swiper-nav",
     "t-fab": "tdesign-miniprogram/fab/fab"
   },
   "window": {
